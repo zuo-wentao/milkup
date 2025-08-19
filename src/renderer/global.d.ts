@@ -13,6 +13,8 @@ interface Window {
     openExternal: (url: string) => Promise<void>
     getFilePathInClipboard: () => Promise<string | null>
     writeTempImage: (file: Uint8Array<ArrayBuffer>, tempPath: string) => Promise<string>
+    // 字体相关
+    getSystemFonts: () => Promise<string[]>
     // 主题编辑器相关
     openThemeEditor: (theme?: any) => void
     themeEditorWindowControl: (action: 'minimize' | 'maximize' | 'close') => void

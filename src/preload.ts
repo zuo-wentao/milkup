@@ -18,6 +18,8 @@ contextBridge.exposeInMainWorld('electronAPI', {
   openExternal: (url: string) => ipcRenderer.send('shell:openExternal', url),
   getFilePathInClipboard: () => ipcRenderer.invoke('clipboard:getFilePath'),
   writeTempImage: (file: File, tempPath: string) => ipcRenderer.invoke('clipboard:writeTempImage', file, tempPath),
+  // 字体相关
+  getSystemFonts: () => ipcRenderer.invoke('get-system-fonts'),
   // 主题编辑器相关
   openThemeEditor: (theme?: any) => ipcRenderer.send('open-theme-editor', theme),
   themeEditorWindowControl: (action: 'minimize' | 'maximize' | 'close') => ipcRenderer.send('theme-editor-window-control', action),
